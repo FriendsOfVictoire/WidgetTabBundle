@@ -1,0 +1,14 @@
+services:
+    victoire_core.widget_tab_content_resolver:
+        class: Victoire\Bundle\WidgetBundle\Resolver\BaseWidgetContentResolver
+        tags:
+            - { name: victoire_widget.widget_content_resolver, alias: Tab }
+    #alias to the entity
+    victoire.widget.tab:
+        class: Victoire\Widget\TabBundle\Entity\WidgetTab
+
+    #alias to the form
+    victoire.widget.form.tab:
+        class: Victoire\Widget\TabBundle\Form\WidgetTabType
+        tags:
+            - { name: form.type , alias: victoire_widget_form_tab }

@@ -1,0 +1,24 @@
+{
+    "name": "victoire/tab-widget",
+    "type": "symfony-bundle",
+    "description": "Victoire Cms Tab widget",
+    "keywords": ["cms", "victoire", "Tab", "widget"],
+    "homepage": "http://appventus.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leny BERNARD",
+            "email": "leny@appventus.com"
+        }
+    ],
+    "require": {
+        "php"                      : ">=5.3.3",
+        "symfony/framework-bundle" : "~2.3",
+        "victoire/victoire"        : "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "Victoire\\Widget\\TabBundle": "" }
+    },
+    "minimum-stability": "dev",
+    "target-dir": "Victoire/Widget/TabBundle"
+}

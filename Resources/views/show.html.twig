@@ -1,0 +1,17 @@
+{% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
+
+{% block content %}
+<ul class="nav nav-tabs" role="tablist">
+{% for item in tabItems %}
+  <li{% if loop.first %} class="active"{% endif %}><a href="#{{ widget.id ~ '-' ~ item.id }}">{{ item.title }}</a></li>
+{% endfor %}
+</ul>
+<!-- Tab panes -->
+<div class="tab-content">
+{% for item in tabItems %}
+    <div class="tab-pane{% if loop.first %} class="active"{% endif %}" id="{{ widget.id ~ '-' ~ item.id }}">
+        {{ cms_slot_widgets(widget.id ~ '-' ~ item.id) }}
+    </div>
+{% endfor %}
+</div>
+{% endblock content %}

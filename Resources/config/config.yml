@@ -1,0 +1,11 @@
+victoire_core:
+    widgets:
+        Tab:
+            class: "Victoire\\Widget\\TabBundle\\Entity\\WidgetTab"
+            name: Tab
+            
+jms_translation:
+    configs:
+        victoire_tab_bundle:
+            dirs: ["@VictoireTabBundle"]
+            output_dir: "@VictoireTabBundle/Resources/translations"

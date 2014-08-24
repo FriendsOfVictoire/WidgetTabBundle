@@ -1,0 +1,72 @@
+<div id="picker-{{ form.mode.vars.data }}" class="vic-tab-pane vic-active">
+    {{ form_start(form) }}
+
+    <ul class="vic-row vic-items" data-prototype="{{ form_widget(form.tabItems.vars.prototype)|e }}">
+        {% for item in form.tabItems %}
+            <li class="vic-col-lg-12 vic-request-block">
+                <div class="vic-panel vic-panel-default">
+                    <div class="vic-panel-heading">
+                        <span class="vic-circled request-number"></span>
+
+                        <button type="button" class="vic-btn vic-btn-remove vic-btn-large vic-pull-right" data-action="remove-block">
+                            <i class="fa fa-trash-o"></i>
+                        </button>
+                    </div>
+
+                    <div id="vic-nl-form" class="vic-panel-body vic-panel-body-request vic-nl-form">
+                        {{ form_widget(item) }}
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% do form.tabItems.setRendered %}
+    {{ form_rest(form) }}
+
+    {{ form_end(form) }}
+
+    <script type="text/javascript">
+        var collectionHolder = $('ul.vic-items');
+
+        // ajoute un lien « add a item »
+        var $addItemLink = $('<a href="#" class="vic-btn vic-btn-add" class="vic-btn vic-btn-add add-request-block"><img src="/bundles/victoirecms/images/addWidget-icon.png"> Ajouter un nouvel élément</a>');
+
+        var $newLinkContainer = $('<li class="vic-col-lg-4 vic-col-lg-offset-8"></li>').append($addItemLink);
+
+        jQuery(document).ready(function() {
+            // ajoute l'ancre « ajouter un item » et li à la balise ul
+            collectionHolder.append($newLinkContainer);
+
+            $addItemLink.on('click', function(e) {
+                // empêche le lien de créer un « # » dans l'URL
+                e.preventDefault();
+
+                // ajoute un nouveau formulaire item (voir le prochain bloc de code)
+                addItemForm(collectionHolder, $newLinkContainer);
+            });
+        });
+
+        function addItemForm(collectionHolder, $newLinkContainer) {
+            // Récupère l'élément ayant l'attribut data-prototype comme expliqué plus tôt
+            var prototype = collectionHolder.attr('data-prototype');
+
+            // Remplace '__name__' dans le HTML du prototype par un nombre basé sur
+            // la longueur de la collection courante
+            var newForm = prototype.replace(/__name__/g, collectionHolder.children().length);
+
+            // Affiche le formulaire dans la page dans un li, avant le lien "ajouter un tag"
+            var $newFormContainer = $('<li class="vic-col-lg-12 vic-request-block"><div class="vic-panel vic-panel-default"><div class="vic-panel-heading"><span class="vic-circled request-number"></span><button type="button" class="vic-btn vic-btn-remove vic-btn-large vic-pull-right" data-action="remove-block"><i class="fa fa-trash-o"></i></button></div><div id="vic-nl-form" class="vic-panel-body vic-panel-body-request vic-nl-form"></div></div></li>');
+
+            var currentFormContainer = $newLinkContainer.before($newFormContainer);
+
+            $('.vic-nl-form', $newFormContainer).append(newForm);
+        }
+
+        $(document).on('click', 'button[data-action="remove-block"]', function(e) {
+            e.preventDefault();
+
+            $(this).parents('li').remove();
+        });
+    </script>
+</div>
