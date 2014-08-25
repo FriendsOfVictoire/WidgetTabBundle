@@ -3,7 +3,7 @@
 {% block content %}
 <ul class="nav nav-tabs" role="tablist">
 {% for item in tabItems %}
-  <li{% if loop.first %} class="active"{% endif %}><a href="#{{ widget.id ~ '-' ~ item.id }}">{{ item.title }}</a></li>
+  <li{% if loop.first %} class="active"{% endif %}><a href="#{{ widget.id ~ '-' ~ item.id }}" role="tab" data-toggle="tab">{{ item.title }}</a></li>
 {% endfor %}
 </ul>
 <!-- Tab panes -->
