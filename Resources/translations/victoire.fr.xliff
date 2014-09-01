@@ -8,11 +8,11 @@
     <body>
       <trans-unit resname="widget.tab.new.action.label">
         <source>widget.tab.new.action.label</source>
-        <target>Tab</target>
+        <target>Onglets</target>
       </trans-unit>
       <trans-unit resname="modal.form.widget.type.tab.label">
         <source>modal.form.widget.type.tab.label</source>
-        <target>Tab</target>
+        <target>Onglets</target>
       </trans-unit>
     </body>
   </file>
