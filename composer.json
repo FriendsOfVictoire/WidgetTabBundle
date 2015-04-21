@@ -1,5 +1,5 @@
 {
-    "name": "appventus/tab-widget",
+    "name": "friendsofvictoire/tab-widget",
     "type": "symfony-bundle",
     "description": "Victoire Cms Tab widget",
     "keywords": ["cms", "victoire", "Tab", "widget"],
