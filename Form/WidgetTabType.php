@@ -18,19 +18,20 @@ class WidgetTabType extends WidgetType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $entityName = $options['entityName'];
+        $businessEntityId = $options['businessEntityId'];
         $namespace = $options['namespace'];
-        $mode = $options['mode'];
+
+        $widgetTabItemType = new WidgetTabItemType($businessEntityId, $namespace, $options['widget']);
 
         $builder->add('tabItems', 'collection', array(
-                'type'         => new WidgetTabItemType($entityName, $namespace, $options['widget']),
+                'type'         => $widgetTabItemType,
                 'allow_add'    => true,
                 'allow_delete' => true,
                 'by_reference' => false,
                 "attr"         => array('id' => 'static'),
                 'options' => array(
                     'namespace'  => $namespace,
-                    'entityName' => $entityName
+                    'businessEntityId' => $businessEntityId
                 ),
             )
         );
