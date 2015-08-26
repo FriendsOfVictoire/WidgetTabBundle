@@ -10,7 +10,7 @@
 <div class="tab-content">
 {% for item in tabItems %}
     <div class="tab-pane{% if loop.first %} active{% endif %}" id="{{ widget.id ~ '-' ~ item.id }}">
-        {{ cms_slot_widgets(widget.id ~ '_' ~ item.id, {'availableWidgets' : []}) }}
+        {{ cms_slot_widgets(widget.childrenSlot ~ '_' ~ item.id, {'availableWidgets' : []}) }}
     </div>
 {% endfor %}
 </div>
