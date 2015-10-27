@@ -2,13 +2,13 @@
     "name": "friendsofvictoire/tab-widget",
     "type": "symfony-bundle",
     "description": "Victoire Cms Tab widget",
-    "keywords": ["cms", "victoire", "Tab", "widget"],
-    "homepage": "http://appventus.com",
+    "keywords": ["DCMS", "Victoire", "FriendsofVictoire", "Dynamic", "CMS", "Tab", "widget"],
+    "homepage": "http://victoire.io",
     "license": "MIT",
     "authors": [
         {
             "name": "Leny BERNARD",
-            "email": "leny@appventus.com"
+            "email": "leny@victoire.io"
         }
     ],
     "require": {
