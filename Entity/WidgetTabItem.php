@@ -1,12 +1,12 @@
 <?php
+
 namespace Victoire\Widget\TabBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Victoire\Bundle\WidgetBundle\Entity\Widget;
 use Victoire\Widget\ListingBundle\Entity\WidgetListingItem;
 
 /**
- * WidgetTab
+ * WidgetTab.
  *
  * @ORM\Table("vic_widget_tab_item")
  * @ORM\Entity
@@ -18,12 +18,11 @@ class WidgetTabItem extends WidgetListingItem
      *
      * @ORM\ManyToOne(targetEntity="WidgetTab", inversedBy="tabs")
      * @ORM\JoinColumn(name="listing_id", referencedColumnName="id", onDelete="CASCADE")
-     *
      */
     protected $container;
 
     /**
-     * Get container
+     * Get container.
      *
      * @return string
      */
@@ -33,7 +32,8 @@ class WidgetTabItem extends WidgetListingItem
     }
 
     /**
-     * Set container
+     * Set container.
+     *
      * @param string $container
      *
      * @return $this
@@ -44,5 +44,4 @@ class WidgetTabItem extends WidgetListingItem
 
         return $this;
     }
-
 }

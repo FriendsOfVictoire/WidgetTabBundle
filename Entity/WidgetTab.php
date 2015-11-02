@@ -1,12 +1,12 @@
 <?php
+
 namespace Victoire\Widget\TabBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Victoire\Bundle\WidgetBundle\Entity\Widget;
 use Victoire\Widget\ListingBundle\Entity\WidgetListing;
 
 /**
- * WidgetTab
+ * WidgetTab.
  *
  * @ORM\Table("vic_widget_tab")
  * @ORM\Entity
@@ -20,7 +20,7 @@ class WidgetTab extends WidgetListing
     protected $tabItems;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -28,7 +28,8 @@ class WidgetTab extends WidgetListing
     }
 
     /**
-     * Set tabItems
+     * Set tabItems.
+     *
      * @param array $tabItems
      *
      * @return WidgetListing
@@ -42,8 +43,10 @@ class WidgetTab extends WidgetListing
 
         return $this;
     }
+
     /**
-     * Add tabItems
+     * Add tabItems.
+     *
      * @param \Victoire\Widget\ListingBundle\Entity\WidgetListingItem $tabItems
      *
      * @return WidgetListing
@@ -57,7 +60,7 @@ class WidgetTab extends WidgetListing
     }
 
     /**
-     * Remove tabItems
+     * Remove tabItems.
      *
      * @param \Victoire\Widget\ListingBundle\Entity\WidgetListingItem $tabItems
      */
@@ -67,7 +70,7 @@ class WidgetTab extends WidgetListing
     }
 
     /**
-     * Get tabItems
+     * Get tabItems.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -79,13 +82,12 @@ class WidgetTab extends WidgetListing
     /**
      * To String function
      * Used in render choices type (Especially in VictoireWidgetRenderBundle)
-     * //TODO Check the generated value and make it more consistent
+     * //TODO Check the generated value and make it more consistent.
      *
-     * @return String
+     * @return string
      */
     public function __toString()
     {
         return '#'.$this->id;
     }
-
 }

@@ -1,20 +1,21 @@
 <?php
+
 namespace Victoire\Widget\TabBundle\Form;
 
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Victoire\Bundle\WidgetBundle\Entity\Widget;
 use Victoire\Widget\ListingBundle\Form\WidgetListingItemType;
 
 /**
- * The form for the theme listing slider
- *
+ * The form for the theme listing slider.
  */
 class WidgetTabItemType extends WidgetListingItemType
 {
     /**
-     * define form fields
+     * define form fields.
+     *
      * @param FormBuilderInterface $builder
+     *
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -23,21 +24,22 @@ class WidgetTabItemType extends WidgetListingItemType
     }
 
     /**
-     * bind form to WidgetTabItem entity
+     * bind form to WidgetTabItem entity.
+     *
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         parent::setDefaultOptions($resolver);
 
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\TabBundle\Entity\WidgetTabItem',
-            'translation_domain' => 'victoire'
-        ));
+            'translation_domain' => 'victoire',
+        ]);
     }
 
     /**
-     * get form name
+     * get form name.
      *
      * @return string The form name
      */

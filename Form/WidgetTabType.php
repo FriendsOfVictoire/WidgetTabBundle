@@ -7,13 +7,15 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
 
 /**
- * WidgetTab form type
+ * WidgetTab form type.
  */
 class WidgetTabType extends WidgetType
 {
     /**
-     * define form fields
+     * define form fields.
+     *
      * @param FormBuilderInterface $builder
+     *
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -23,38 +25,39 @@ class WidgetTabType extends WidgetType
 
         $widgetTabItemType = new WidgetTabItemType($businessEntityId, $namespace, $options['widget']);
 
-        $builder->add('tabItems', 'collection', array(
+        $builder->add('tabItems', 'collection', [
                 'type'         => $widgetTabItemType,
                 'allow_add'    => true,
                 'allow_delete' => true,
                 'by_reference' => false,
-                "attr"         => array('id' => 'static'),
-                'options' => array(
-                    'namespace'  => $namespace,
-                    'businessEntityId' => $businessEntityId
-                ),
-            )
+                'attr'         => ['id' => 'static'],
+                'options'      => [
+                    'namespace'        => $namespace,
+                    'businessEntityId' => $businessEntityId,
+                ],
+            ]
         );
         parent::buildForm($builder, $options);
     }
 
     /**
-     * bind form to WidgetTab entity
+     * bind form to WidgetTab entity.
+     *
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         parent::setDefaultOptions($resolver);
 
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\TabBundle\Entity\WidgetTab',
             'widget'             => 'Tab',
-            'translation_domain' => 'victoire'
-        ));
+            'translation_domain' => 'victoire',
+        ]);
     }
 
     /**
-     * get form name
+     * get form name.
      *
      * @return string The form name
      */
