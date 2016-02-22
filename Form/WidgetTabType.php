@@ -2,8 +2,9 @@
 
 namespace Victoire\Widget\TabBundle\Form;
 
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
 
 /**
@@ -20,20 +21,20 @@ class WidgetTabType extends WidgetType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $businessEntityId = $options['businessEntityId'];
-        $namespace = $options['namespace'];
-
-        $widgetTabItemType = new WidgetTabItemType($businessEntityId, $namespace, $options['widget']);
-
-        $builder->add('tabItems', 'collection', [
-                'type'         => $widgetTabItemType,
+        $builder->add('tabItems', CollectionType::class, [
+                'entry_type'   => WidgetTabItemType::class,
+                'entry_options'=> [
+                    'businessEntityId' => $options['businessEntityId'],
+                    'namespace'        => $options['namespace'],
+                    'widget'           => $options['widget']
+                ],
                 'allow_add'    => true,
                 'allow_delete' => true,
                 'by_reference' => false,
                 'attr'         => ['id' => 'static'],
                 'options'      => [
-                    'namespace'        => $namespace,
-                    'businessEntityId' => $businessEntityId,
+                    'namespace'        => $options['namespace'],
+                    'businessEntityId' => $options['businessEntityId'],
                 ],
             ]
         );
@@ -41,28 +42,16 @@ class WidgetTabType extends WidgetType
     }
 
     /**
-     * bind form to WidgetTab entity.
-     *
-     * @param OptionsResolverInterface $resolver
+     * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\TabBundle\Entity\WidgetTab',
             'widget'             => 'Tab',
             'translation_domain' => 'victoire',
         ]);
-    }
-
-    /**
-     * get form name.
-     *
-     * @return string The form name
-     */
-    public function getName()
-    {
-        return 'victoire_widget_form_tab';
     }
 }

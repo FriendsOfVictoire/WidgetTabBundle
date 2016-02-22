@@ -11,4 +11,4 @@ services:
     victoire.widget.form.tab:
         class: Victoire\Widget\TabBundle\Form\WidgetTabType
         tags:
-            - { name: form.type , alias: victoire_widget_form_tab }
+            - { name: form.type }
