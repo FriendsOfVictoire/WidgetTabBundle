@@ -3,6 +3,7 @@
 namespace Victoire\Widget\TabBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Victoire\Bundle\WidgetBundle\Entity\WidgetSlotInterface;
 use Victoire\Widget\ListingBundle\Entity\WidgetListing;
 
 /**
@@ -11,7 +12,7 @@ use Victoire\Widget\ListingBundle\Entity\WidgetListing;
  * @ORM\Table("vic_widget_tab")
  * @ORM\Entity
  */
-class WidgetTab extends WidgetListing
+class WidgetTab extends WidgetListing implements WidgetSlotInterface
 {
     /**
      * @var string
