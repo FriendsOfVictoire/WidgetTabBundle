@@ -25,6 +25,7 @@ class WidgetTab extends WidgetListing implements WidgetSlotInterface
      */
     public function __construct()
     {
+        parent::__construct();
         $this->tabItems = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
