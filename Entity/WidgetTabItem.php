@@ -16,7 +16,7 @@ class WidgetTabItem extends WidgetListingItem
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="WidgetTab", inversedBy="tabs")
+     * @ORM\ManyToOne(targetEntity="WidgetTab", inversedBy="tabItems")
      * @ORM\JoinColumn(name="listing_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $container;
