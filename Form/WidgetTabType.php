@@ -22,11 +22,11 @@ class WidgetTabType extends WidgetType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('tabItems', CollectionType::class, [
-                'entry_type'   => WidgetTabItemType::class,
-                'entry_options'=> [
+                'entry_type'    => WidgetTabItemType::class,
+                'entry_options' => [
                     'businessEntityId' => $options['businessEntityId'],
                     'namespace'        => $options['namespace'],
-                    'widget'           => $options['widget']
+                    'widget'           => $options['widget'],
                 ],
                 'allow_add'    => true,
                 'allow_delete' => true,

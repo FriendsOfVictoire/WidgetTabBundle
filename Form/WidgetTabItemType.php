@@ -2,7 +2,6 @@
 
 namespace Victoire\Widget\TabBundle\Form;
 
-use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Widget\ListingBundle\Form\WidgetListingItemType;
 
