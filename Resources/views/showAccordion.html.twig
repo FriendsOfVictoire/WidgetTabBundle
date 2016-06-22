@@ -1,0 +1,23 @@
+{% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
+
+{% block content %}
+    <div class="panel-group" id="{{ widget.id }}" role="tablist" aria-multiselectable="true">
+        {% for item in tabItems %}
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="{{ widget.id }}-{{ loop.index }}-heading">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#{{ widget.id }}" href="#{{ widget.id }}-{{ loop.index }}-collapse" aria-expanded="true" aria-controls="{{ widget.id }}-{{ loop.index }}-collapse">
+                            {{ item.title }}
+                        </a>
+                    </h4>
+                </div>
+
+                <div id="{{ widget.id }}-{{ loop.index }}-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ widget.id }}-{{ loop.index }}-heading">
+                    <div class="panel-body">
+                        {{ cms_slot_widgets(widget.id ~ '_' ~ item.id, {'availableWidgets' : []}) }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
