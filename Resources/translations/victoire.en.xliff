@@ -14,6 +14,10 @@
         <source>modal.form.widget.type.tab.label</source>
         <target>Tab</target>
       </trans-unit>
+      <trans-unit resname="victoire.VictoireWidgetTabBundle.theme.Accordion.label">
+        <source>victoire.VictoireWidgetTabBundle.theme.Accordion.label</source>
+        <target>Accordions (bootstrap)</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
