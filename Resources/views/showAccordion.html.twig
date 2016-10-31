@@ -14,7 +14,7 @@
 
                 <div id="{{ widget.id }}-{{ loop.index }}-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ widget.id }}-{{ loop.index }}-heading">
                     <div class="panel-body">
-                        {{ cms_slot_widgets(widget.id ~ '_' ~ item.id, {'availableWidgets' : []}) }}
+                        {{ cms_slot_widgets(widget.childrenSlot ~ '_' ~ item.id, {'availableWidgets' : []}) }}
                     </div>
                 </div>
             </div>
