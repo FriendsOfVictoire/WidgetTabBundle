@@ -17,6 +17,7 @@ class WidgetTab extends WidgetListing implements WidgetSlotInterface
     /**
      * @var string
      * @ORM\OneToMany(targetEntity="WidgetTabItem", mappedBy="container", cascade={"persist", "remove"}, orphanRemoval=true)
+     * @ORM\OrderBy({"position" = "ASC"})
      */
     protected $tabItems;
 
