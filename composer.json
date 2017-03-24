@@ -1,5 +1,5 @@
 {
-    "name": "friendsofvictoire/tab-widget",
+    "name": "victoire/tab-widget",
     "type": "symfony-bundle",
     "description": "Victoire DCMS Tab widget",
     "keywords": [
