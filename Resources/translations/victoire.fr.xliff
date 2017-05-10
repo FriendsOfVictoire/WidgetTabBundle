@@ -6,15 +6,15 @@
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
-      <trans-unit resname="widget.tab.new.action.label">
+      <trans-unit resname="widget.tab.new.action.label" id="591335da0a662">
         <source>widget.tab.new.action.label</source>
         <target>Onglets</target>
       </trans-unit>
-      <trans-unit resname="modal.form.widget.type.tab.label">
+      <trans-unit resname="modal.form.widget.type.tab.label" id="591335da0a68f">
         <source>modal.form.widget.type.tab.label</source>
         <target>Onglets</target>
       </trans-unit>
-      <trans-unit resname="victoire.VictoireWidgetTabBundle.theme.Accordion.label">
+      <trans-unit resname="victoire.VictoireWidgetTabBundle.theme.Accordion.label" id="591335da0a6b9">
         <source>victoire.VictoireWidgetTabBundle.theme.Accordion.label</source>
         <target>Accordéons (bootstrap)</target>
       </trans-unit>
