@@ -32,10 +32,6 @@ class WidgetTabType extends WidgetType
                 'allow_delete' => true,
                 'by_reference' => false,
                 'attr'         => ['id' => 'static'],
-                'options'      => [
-                    'namespace'        => $options['namespace'],
-                    'businessEntityId' => $options['businessEntityId'],
-                ],
             ]
         );
         parent::buildForm($builder, $options);
